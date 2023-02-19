@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Payment Gateway</title>
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+
+        <div class="nav">
+            <ul>
+                <li><a href="/cc">Credit Card</a></li>
+                <li><a href="/va">Virtual Account</a></li>
+                <li><a href="/#!" class="active">E-Wallet</a></li>
+            </ul>
+        </div>
+
+        <div class="content" id="virtualAccountForm">
+            <header>
+                <h1>GoPay Payment</h1>
+            </header>
+            <form action="/eWalPay" method="POST">
+                <fieldset>
+                    <label for="eWalAmount">Total Payment Cost</label>
+                    <input type="text"
+                           name="eWalAmount" 
+                           id="eWalAmount"
+                           placeholder="10000"
+                    >
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit" >Generate QR Code</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div id="qrContainer">
+        </div>
+
+    <script id="midtrans-script" type="text/javascript"
+            src="https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js"
+            data-environment="sandbox"
+            data-client-key="SB-Mid-client-CihgRVevrcvowA1Q">
+    </script>
+    </body>
+</html>

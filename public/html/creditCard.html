@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Payment Gateway</title>
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+
+        <div class="nav">
+            <ul>
+                <li><a href="#!" class="active">Credit Card</a></li>
+                <li><a href="/va">Virtual Account</a></li>
+                <li><a href="/eWal">E-Wallet</a></li>
+            </ul>
+        </div>
+
+        <div class="content" id="creditCardForm">
+            <header>
+                <h1>Credit Card Payment</h1>
+            </header>
+            <form action="/ccPay" method="POST">
+                <fieldset>
+                    <label for="ccNumber">Credit Card Number</label>
+                    <input type="text" 
+                           id="ccNumber"
+                           placeholder="4811111111111114"
+                           name="ccNumber"
+                    >
+                    <label for="ccExp">Expiration Date</label>
+                    <input type="text"
+                           id="ccExp"
+                           placeholder="MM/YYYY"
+                           name="ccExp"
+                    >
+                    <label for="ccCVV">CVV</label>
+                    <input type="text"
+                           id="ccCVV"
+                           placeholder="123"
+                           name="ccCVV"
+                    >
+                    <label for="ccAmount">Total Payment Cost</label>
+                    <input type="text"
+                           name="ccAmount" 
+                           id="ccAmount"
+                           placeholder="10000"
+                    >
+                    <input type="hidden" 
+                           name="ccToken"
+                           id="ccToken"
+                    >
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit" >Process Transaction</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div>
+            <button id="transactionButton">Confirm Card Data</button>
+            <p id="message"></p>
+        </div>
+
+    <script id="midtrans-script" type="text/javascript"
+            src="https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js"
+            data-environment="sandbox"
+            data-client-key="SB-Mid-client-CihgRVevrcvowA1Q">
+    </script>
+    <script src="../js/creditCard.js"></script>
+    </body>
+</html>
